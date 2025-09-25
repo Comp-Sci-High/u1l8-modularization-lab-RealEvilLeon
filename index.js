@@ -14,7 +14,7 @@ let groceryList = ["Milk", "Oreos"];
 //////////////////////////////////////////////////////////////////////
 // 1. Create a function that adds an item to the list.
 // Return the new item.
-function arraySetter(newItem){
+function addItem(newItem){
     groceryList.push(newItem)
     return newItem
 }
@@ -122,12 +122,16 @@ function clearList(){
 */
 
 // Call 1: Clear the grocery list
+clearList()
 
 // Call 2: Add Gouda Cheese
+addItem("Gouda Cheese")
 
 // Call 3: Add Brie Cheese
+addItem("Brie Cheese")
 
 // Call 4: Add Swiss Cheese
+addItem("Swiss Cheese")
 
 // Call 5: Remove Swiss Cheese
 

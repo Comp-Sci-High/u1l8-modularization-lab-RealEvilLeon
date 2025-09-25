@@ -14,15 +14,20 @@ let groceryList = ["Milk", "Oreos"];
 //////////////////////////////////////////////////////////////////////
 // 1. Create a function that adds an item to the list.
 // Return the new item.
+function arraySetter(newItem){
+    groceryList.push(newItem)
+    return newItem
+}
 
 // Code to modularize:
-let item = "Animal Crackers";
-groceryList.push(item);
-console.log("Item added: " + item);
 
 //////////////////////////////////////////////////////////////////////
 // 2. Create a function that removes the last item from the list.
 // Return the removed item.
+
+function removeLastItem(){
+   groceryList.pop()
+}
 
 // Code to modularize:
 let itemToRemove = groceryList[groceryList.length - 1];
@@ -32,6 +37,10 @@ console.log("Item removed: " + itemToRemove);
 //////////////////////////////////////////////////////////////////////
 // 3. Create a function that updates a specific item in the list.
 // Return the updated item.
+
+function updateItem(itemIndex, item){
+    groceryList[itemIndex] = item
+}
 
 // Code to modularize:
 let indexToUpdate = 0;
@@ -43,6 +52,10 @@ console.log("Item updated from " + oldItem + " to " + newItem);
 //////////////////////////////////////////////////////////////////////
 // 4. Create a function that shows the current grocery list.
 // Returns the grocery list array.
+
+function showList(){
+    return groceryList
+}
 
 // Code to modularize:
 if (groceryList.length === 0) {
@@ -61,10 +74,29 @@ if (groceryList.length === 0) {
 // It should log the following "The grocery list has x item(s).", with x being how many items are left.
 // Returns the grocery list length.
 
+function howManyLeft(){
+  if(groceryList.length() >= 1){
+      console.log(`The Grocery List has x${groceryList.length()} items left.`) 
+  } 
+
+  return groceryList.length()
+    
+  
+    
+}
+
 //////////////////////////////////////////////////////////////////////
 // 2. Write a function that clears the whole grocery list.
 // It should log the following "The grocery list is now empty."
 // Returns the empty grocery list.
+
+function clearList(){
+    for(item in groceryList){
+      groceryList.splice(item)
+    }
+
+    return groceryList
+}
 
 //////////////////////////////////////////////////////////////////////
 // Part 3 - Calling Functions

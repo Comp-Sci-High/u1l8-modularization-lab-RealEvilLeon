@@ -30,9 +30,6 @@ function removeLastItem(){
 }
 
 // Code to modularize:
-let itemToRemove = groceryList[groceryList.length - 1];
-groceryList.pop();
-console.log("Item removed: " + itemToRemove);
 
 //////////////////////////////////////////////////////////////////////
 // 3. Create a function that updates a specific item in the list.
@@ -43,26 +40,17 @@ function updateItem(itemIndex, item){
 }
 
 // Code to modularize:
-let indexToUpdate = 0;
-let newItem = "Bananas";
-let oldItem = groceryList[indexToUpdate];
-groceryList[indexToUpdate] = newItem;
-console.log("Item updated from " + oldItem + " to " + newItem);
 
 //////////////////////////////////////////////////////////////////////
 // 4. Create a function that shows the current grocery list.
 // Returns the grocery list array.
 
 function showList(){
+    console.log(groceryList)
     return groceryList
 }
 
 // Code to modularize:
-if (groceryList.length === 0) {
-  console.log("The grocery list is empty.");
-} else {
-  console.log("Grocery List: " + groceryList);
-}
 
 //////////////////////////////////////////////////////////////////////
 
@@ -74,12 +62,12 @@ if (groceryList.length === 0) {
 // It should log the following "The grocery list has x item(s).", with x being how many items are left.
 // Returns the grocery list length.
 
+let groceryListLength = groceryList.length
 function howManyLeft(){
-  if(groceryList.length() >= 1){
-      console.log(`The Grocery List has x${groceryList.length()} items left.`) 
-  } 
 
-  return groceryList.length()
+if(groceryListLength >= 1){
+  console.log(`The List Has x${groceryListLength} items left.`)
+}
     
   
     
@@ -94,7 +82,7 @@ function clearList(){
     for(item in groceryList){
       groceryList.splice(item)
     }
-
+    console.log("List Is Now Empty")
     return groceryList
 }
 
@@ -134,21 +122,34 @@ addItem("Brie Cheese")
 addItem("Swiss Cheese")
 
 // Call 5: Remove Swiss Cheese
+removeLastItem()
+
+
 
 // Call 6: Add Green Grapes
+addItem("Green Grapes")
 
 // Call 7: Show the list
+showList()
 
 // Call 8: Add Prosciutto
+addItem("Prosciutto")
 
 // Call 9: Add Chorizo
+addItem("Chorizo")
 
 // Call 10: Add Multigrain Crackers
+addItem("Multigrain Crackers")
 
 // Call 11: Update Chorizo to Jamon
 
+updateItem(4, "Jamon")
+
 // Call 12: Show the count of items
+howManyLeft()
 
 // Call 13: Add Pita Chips
+addItem("Pita Chips")
 
 // Call 14: Show the final list
+showList()

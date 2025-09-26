@@ -68,6 +68,8 @@ function howManyLeft(){
 if(groceryListLength >= 1){
   console.log(`The List Has x${groceryListLength} items left.`)
 }
+
+return groceryListLength
     
   
     
